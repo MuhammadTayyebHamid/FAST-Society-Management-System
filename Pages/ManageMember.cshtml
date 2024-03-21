@@ -1,0 +1,105 @@
+﻿@page
+@model SE_Project.Pages.ManageMember
+
+@{
+    Layout = null;
+}
+
+
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SMS</title>
+  <link rel="stylesheet" href="/css/ManageMember.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          <img src="/images/logo.jpg" alt="">
+          <h1>SMS</h1>
+        </div>
+        <ul>
+          <li><a href="/SocietyHead">
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="/ManageMember">
+              <span class="nav-item">Manage Member</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="nav-item">Manage Event</span>
+            </a>
+          </li>
+          <li>
+            <a href="/TaskCoordination">
+              <span class="nav-item">Task Coordination</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <section class="main">
+    <div class="main-top">
+      <p>Society Management System</p>
+    </div>
+    <div class="main-body">
+      <div class="addMember-box">
+        <h1>Add Member</h1>
+        <form>
+          <label>First Name</label>
+          <input type="text" placeholder="Enter First Name" />
+          <label>Last Name</label>
+          <input type="text" placeholder="Enter Last Name" />
+          <label>Email</label>
+          <input type="email" placeholder="Enter Email" />
+          <label>Roll No</label>
+          <input type="text" placeholder="Enter Roll No i.e. 24I-0823" />
+          <label>Role</label>
+          <select id="selectRole" name="Role">
+            <option>President</option>
+            <option>Vice President</option>
+            <option>General Secretary</option>
+            <option>Media Secratary</option>
+            <option>Member</option>
+
+          </select>
+          <input id="sub-button" type="button" value="Submit" />
+        </form>
+      </div>
+      
+      <div class="removeMember-box">
+        <h1>Remove Member</h1>
+        <form>
+          
+          <label>Email</label>
+          <input type="email" placeholder="Enter Email" />
+          <label>Roll No</label>
+          <input type="text" placeholder="Enter Roll No i.e. 24I-0823" />
+          <label>Reason</label>
+          <textarea id="reasontext" rows="9" cols="50" placeholder="Enter Reason ..."></textarea>
+          <input id="SubmitBtn" type="button" value="Submit" />
+        </form>
+      </div>
+      
+    </div>
+
+  </section>
+  </div>
+
+</body>
+</html></span>

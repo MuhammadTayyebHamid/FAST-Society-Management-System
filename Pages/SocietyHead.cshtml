@@ -1,0 +1,78 @@
+﻿@page
+@model SE_Project.Pages.SocietyHead
+
+@{
+    Layout = null;
+}
+
+
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SMS</title>
+  <link rel="stylesheet" href="/css/SocietyHead.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          <img src="/images/logo.jpg" alt="">
+          <h1>SMS</h1>
+        </div>
+        <ul>
+          <li><a href="/SocietyHead">
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="/ManageMember">
+              <span class="nav-item">Manage Member</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="nav-item">Manage Event</span>
+            </a>
+          </li>
+          <li>
+            <a href="/TaskCoordination">
+              <span class="nav-item">Task Coordination</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <section class="main">
+    <div class="main-top">
+      <p>Society Management System</p>
+    </div>
+    <div class="main-body">
+      <h1>Announce Something</h1>
+      
+      <div class="announce_bar">
+        <input type="text" placeholder="Add something here...">
+      </div>
+
+      <div class="post-bar">
+        <div class="post">
+          <span>Post</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  </div>
+
+</body>
+</html></span>
