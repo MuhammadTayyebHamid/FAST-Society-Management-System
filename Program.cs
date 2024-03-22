@@ -1,7 +1,10 @@
+using SE_Project.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<MyDbContext>();
 
 var app = builder.Build();
 
