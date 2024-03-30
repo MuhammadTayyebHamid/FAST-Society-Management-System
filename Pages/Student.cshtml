@@ -1,21 +1,21 @@
 ﻿@page
-@model SE_Project.Pages.AdminModel
-
+@model SE_Project.Pages.StudentModel
 @{
     Layout = null;
 }
+
+
+
 <span style="font-family: verdana, geneva, sans-serif;">
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <title>SMS</title>
-        <link rel="stylesheet" href="/css/Admin.css" />
+        <link rel="stylesheet" href="/css/Student.css" />
         <!-- Font Awesome Cdn Link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     </head>
-
     <body>
-
         <div class="container">
             <nav>
                 <div class="navbar">
@@ -25,28 +25,25 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="/Admin">
+                            <a href="/Student">
                                 <span class="nav-item">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ApplyInterview">
+                                <span class="nav-item">Apply for Interview</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="/AddSociety">
-                                <span class="nav-item">Add Society</span>
-                            </a>
-                        </li>
-                                
-                        <li>
-                            <a href="/DeleteSociety">
-                                <span class="nav-item">Delete Society</span>
+                            <a href="#" class="logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span class="nav-item">Logout</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </nav>
-                
-        
-            
 
             <section class="main">
                 <div class="main-top">
@@ -56,9 +53,42 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+                <div class="main-body">
+                    <h2>Announcements</h2>
+                    <br />
+                    <table class="announcementTable">
+
+                        <tr>
+                            <td id="societyColumn">
+                                <h3>Society 1</h3>
+                            </td>
+                            <td>
+                                <p>Announcemetssssssssssssssssssssss.</p>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h3>Society 2</h3>
+                            </td>
+                            <td>
+                                <p>Announcemetssssssssssssssssssssss.</p>
+                            </td>
+
+                        </tr>
+                    </table>
+
+
+
+
+                </div>
+
+
             </section>
         </div>
+
     </body>
-    </html>
-    
+</html>
 </span>
+

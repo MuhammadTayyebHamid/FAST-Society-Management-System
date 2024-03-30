@@ -1,9 +1,9 @@
 ﻿@page
-@model SE_Project.Pages.ManageMember
-
+@model SE_Project.Pages.ApplyInterviewModel
 @{
     Layout = null;
 }
+
 
 
 <span style="font-family: verdana, geneva, sans-serif;">
@@ -11,7 +11,7 @@
     <html lang="en">
     <head>
         <title>SMS</title>
-        <link rel="stylesheet" href="/css/ManageMember.css" />
+        <link rel="stylesheet" href="/css/ApplyInterview.css" />
         <!-- Font Awesome Cdn Link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     </head>
@@ -25,31 +25,16 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="/SocietyHead">
+                            <a href="/Student">
                                 <span class="nav-item">Home</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="/ApplyInterview">
+                                <span class="nav-item">Apply for Interview</span>
+                            </a>
+                        </li>
 
-                        <li>
-                            <a href="/ManageMember">
-                                <span class="nav-item">Manage Member</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="ManageEvent">
-                                <span class="nav-item">Manage Event</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/TaskCoordination">
-                                <span class="nav-item">Task Coordination</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ManageInterview">
-                                <span class="nav-item">Manage Interview</span>
-                            </a>
-                        </li>
                         <li>
                             <a href="#" class="logout">
                                 <i class="fas fa-sign-out-alt"></i>
@@ -69,13 +54,13 @@
                     </button>
                 </div>
                 <div class="main-body">
-                    <div class="addMember-box">
-                        <h1>Add Member</h1>
+                    <div class="applyInterview-box">
+                        <h1>Apply for Interview</h1>
                         <form>
-                            <label>First Name</label>
-                            <input type="text" placeholder="Enter First Name" />
-                            <label>Last Name</label>
-                            <input type="text" placeholder="Enter Last Name" />
+                            <label>Society</label>
+                            <input type="text" placeholder="Enter Society Name" />
+                            <label>Name</label>
+                            <input type="text" placeholder="Enter Name" />
                             <label>Email</label>
                             <input type="email" placeholder="Enter Email" />
                             <label>Roll No</label>
@@ -89,23 +74,11 @@
                                 <option>Member</option>
 
                             </select>
-                            <input id="sub-button" type="button" value="Submit" />
+                            <input id="sub-button" type="button" value="Apply" />
                         </form>
                     </div>
 
-                    <div class="RemoveMember-box">
-                        <h1>Remove Member</h1>
-                        <form>
 
-                            <label>Email</label>
-                            <input type="email" placeholder="Enter Email" />
-                            <label>Roll No</label>
-                            <input type="text" placeholder="Enter Roll No i.e. 24I-0823" />
-                            <label>Reason</label>
-                            <textarea id="reasontext" rows="9" cols="50" placeholder="Enter Reason ..."></textarea>
-                            <input id="SubmitBtn" type="button" value="Submit" />
-                        </form>
-                    </div>
 
                 </div>
 
@@ -115,3 +88,4 @@
     </body>
 </html>
 </span>
+

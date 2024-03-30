@@ -14,61 +14,66 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     </head>
 
-<body>
-        <div class="container">
-            <nav>
-                <div class="navbar">
-                    <div class="logo">
-                        <img src="/images/logo.jpg" alt="">
-                        <h1>SMS</h1>
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="/Admin">
-                                <span class="nav-item">Home</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/AddSociety">
-                                <span class="nav-item">Add Society</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/DeleteSociety">
-                                <span class="nav-item">Delete Society</span>
-                            </a>
-                        </li>
-                    </ul>
+    <body>
+    <div class="container">
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <img src="/images/logo.jpg" alt="">
+                    <h1>SMS</h1>
                 </div>
-            </nav>
+                <ul>
+                    <li>
+                        <a href="/Admin">
+                            <span class="nav-item">Home</span>
+                        </a>
+                    </li>
 
-            <section class="main">
-                <div class="main-top">
-                    <a class="navbar-brand" asp-area="" asp-page="/Index">Society Management System</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
+                    <li>
+                        <a href="/AddSociety">
+                            <span class="nav-item">Add Society</span>
+                        </a>
+                    </li>
 
-                <div class="main-body">
-                    <div class="addMember-box">
-                        <h1>Delete Society</h1>
-                        <form method="post">
-                            <div>
-                                <label for="societyName">Society Name:</label>
-                                <input type="text" id="societyName" name="societyName" required />
-                            </div>
-                            <input id="SubmitBtn" type="button" value="Submit" />
-                        </form>
+                    <li>
+                        <a href="/DeleteSociety">
+                            <span class="nav-item">Delete Society</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-                    </div>        
-                </div>
+        <section class="main">
+            <div class="main-top">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Society Management System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
 
-            </section>
-</body>
+            <div class="main-body">
+                <div class="addMember-box">
+                    <h1>Delete Society</h1>
+                    <form method="post">
+                        <div>
+                            <label for="societyName">Society Name:</label>
+                            <input type="text" id="societyName" name="societyName" required />
+                        </div>
+                        <input id="SubmitBtn" type="button" value="Submit" />
+                    </form>
+
+                </div>        
+            </div>
+
+        </section>
+    </div>
+    </body>
+    
+    </html>
+</span>
+
 
 
 

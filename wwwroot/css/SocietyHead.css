@@ -142,3 +142,27 @@ h1{
 }
 
 
+table {
+    width: 95%;
+    border: 1px solid;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+tr{
+    height: 50px;
+    border: 1px solid;
+}
+td{
+    border: 1px solid;
+    padding-left: 10px;
+
+}
+
+
+tr:hover {
+    background-color: lightgray;
+}
+#societyColumn{
+    width: 200px;
+}

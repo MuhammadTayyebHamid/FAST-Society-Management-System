@@ -1,0 +1,162 @@
+﻿@page
+@model SE_Project.Pages.ManageInterviewModel
+@{
+    Layout = null;
+}
+
+
+
+
+<span style="font-family: verdana, geneva, sans-serif;">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>SMS</title>
+        <link rel="stylesheet" href="/css/ManageInterview.css" />
+        <!-- Font Awesome Cdn Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="/images/logo.jpg" alt="">
+                        <h1>SMS</h1>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="/SocietyHead">
+                                <span class="nav-item">Home</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/ManageMember">
+                                <span class="nav-item">Manage Member</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ManageEvent">
+                                <span class="nav-item">Manage Event</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/TaskCoordination">
+                                <span class="nav-item">Task Coordination</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ManageInterview">
+                                <span class="nav-item">Manage Interview</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span class="nav-item">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                </nav>
+
+            <section class="main">
+                <div class="main-top">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">Society Management System</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="main-body">
+                    <h1>Manage Interview</h1>
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td>Email</td>
+                            <td>Roll NO</td>
+                            <td>Role</td>
+                            <td>Response</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Huzaifa</td>
+                            <td>i210586@nu.edu.pk</td>
+                            <td>21I-0586</td>
+                            <td>Member</td>
+                            <td>
+                                <select id="response" onchange="handleResponseChange(this)">
+                                    <option value="">Select</option>
+                                    <option value="Accept">Accept</option>
+                                    <option value="Reject">Reject</option>
+                                </select>
+                                <label id="dateLabel" style="display: none;">Date</label>
+                                <input type="date" id="dateInput" style="display: none;" />
+                                <label id="timeLabel" style="display: none;">Time</label>
+                                <input type="time" id="timeInput" style="display: none;" />
+                                <input type="button" id="doneButton" value="Done" style="display: none;" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Tayyeb </td>
+                            <td>i210378@nu.edu.pk</td>
+                            <td>21I-0378</td>
+                            <td>President</td>
+                            <td>
+                                <input id="sub-button" type="button" value="Conduct" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>M Ibrahim</td>
+                            <td>i210797@nu.edu.pk</td>
+                            <td>21I-0797</td>
+                            <td>Member</td>
+                            <td>
+                                <input id="sub-button" type="button" value="Conduct" />
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+
+
+                </div>
+
+            </section>
+        </div>
+
+    </body>
+</html>
+</span>
+
+
+<script>
+    function handleResponseChange(selectElement) {
+        var dateLabel = document.getElementById('dateLabel');
+        var dateInput = document.getElementById('dateInput');
+        var timeLabel = document.getElementById('timeLabel');
+        var timeInput = document.getElementById('timeInput');
+        var doneButton = document.getElementById('doneButton');
+
+        if (selectElement.value === 'Accept') {
+            dateLabel.style.display = 'block';
+            dateInput.style.display = 'block';
+            timeLabel.style.display = 'block';
+            timeInput.style.display = 'block';
+            doneButton.style.display = 'block';
+        } else {
+            dateLabel.style.display = 'none';
+            dateInput.style.display = 'none';
+            timeLabel.style.display = 'none';
+            timeInput.style.display = 'none';
+            doneButton.style.display = 'none';
+        }
+    }
+</script>
+

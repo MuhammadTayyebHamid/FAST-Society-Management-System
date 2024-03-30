@@ -161,7 +161,7 @@ h1 {
         color: #fff;
     }
 
-.addEvent-box {
+.manageInterview-box {
     padding-top: 40px;
     width: 490px;
     height: 630px;
@@ -173,17 +173,6 @@ h1 {
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-.RemoveEvent-box {
-    align-content: center;
-    width: 490px;
-    height: 630px;
-    margin: auto;
-    background-color: white;
-    border-radius: 3px;
-    float: left;
-    margin-left: 30px;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
-}
 
 
 h1 {
@@ -237,7 +226,7 @@ form {
 
 
 input[type="button"] {
-    width: 440px;
+    width: 100px;
     height: 45px;
     margin-top: 20px;
     border: none;
@@ -267,3 +256,32 @@ p {
     .para-2 a {
         color: #49c1a2;
     }
+
+
+table {
+    width: 95%;
+    border: 1px solid;
+    border-collapse: collapse;
+    background: #fff;
+    align-content: center;
+
+
+}
+
+tr {
+    height: 50px;
+    border: 1px solid;
+}
+
+td {
+    border: 1px solid;
+    padding-left: 10px;
+}
+
+#dateInput{
+    width: 100%;
+    padding: 7px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}

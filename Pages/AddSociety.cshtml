@@ -14,84 +14,88 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     </head>
 
-<body>
-        <div class="container">
-            <nav>
-                <div class="navbar">
-                    <div class="logo">
-                        <img src="/images/logo.jpg" alt="">
-                        <h1>SMS</h1>
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="/Admin">
-                                <span class="nav-item">Home</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/AddSociety">
-                                <span class="nav-item">Add Society</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/DeleteSociety">
-                                <span class="nav-item">Delete Society</span>
-                            </a>
-                        </li>
-                    </ul>
+    <body>
+    <div class="container">
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <img src="/images/logo.jpg" alt="">
+                    <h1>SMS</h1>
                 </div>
-            </nav>
+                <ul>
+                    <li>
+                        <a href="/Admin">
+                            <span class="nav-item">Home</span>
+                        </a>
+                    </li>
 
-            <section class="main">
-                <div class="main-top">
-                    <a class="navbar-brand" asp-area="" asp-page="/Index">Society Management System</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
+                    <li>
+                        <a href="/AddSociety">
+                            <span class="nav-item">Add Society</span>
+                        </a>
+                    </li>
 
-                <div class="main-body">
+                    <li>
+                        <a href="/DeleteSociety">
+                            <span class="nav-item">Delete Society</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="main">
+            <div class="main-top">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Society Management System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="main-body">
                    
-                    <div class="addMember-box">
-                        <h1>Add Society</h1>
-                        <form method="post">
-                            <div>
-                                <label for="societyName">Society Name:</label>
-                                <input type="text" id="societyName" name="societyName" required />
-                            </div>
-                            <div>
-                                <label for="mentorName">Mentor Name:</label>
-                                <input type="text" id="mentorName" name="mentorName" required />
-                            </div>
-                            <div>
-                                <label for="teamMembers">Team Members (Enter 5 names):</label>
-                                <label for="teamMembers"> Enter Vice President</label>
-                                <input type="text" id="member1" name="Member" required />
-                                <label for="teamMembers"> Enter General Secretary</label>
-                                <input type="text" id="member2" name="Enter Media Secretary" required />
-                                <label for="teamMembers"> Enter Member</label>
-                                <input type="text" id="member3" name="Member" required />
-                                <label for="teamMembers"> Enter Member</label>
-                                <input type="text" id="member4" name="Member" required />
-                                <label for="teamMembers"> Enter Member</label>
-                                <input type="text" id="member5" name="Member" required />
-                            </div>
-                            <div>
-                                <label for="headOfSociety">Head of Society:</label>
-                                <input type="text" id="headOfSociety" name="headOfSociety" required />
-                            </div>
-                            <div>
-                                <label for="plans">Plans:</label>
-                                <textarea id="reasontext" rows="5" cols="50" placeholder="Enter Plans ..."></textarea>
-                            </div>
-                            <input id="SubmitBtn" type="button" value="Submit" />
-                        </form>
-                    </div>
+                <div class="addMember-box">
+                    <h1>Add Society</h1>
+                    <form method="post">
+                        <div>
+                            <label for="societyName">Society Name:</label>
+                            <input type="text" id="societyName" name="societyName" required />
+                        </div>
+                        <div>
+                            <label for="mentorName">Mentor Name:</label>
+                            <input type="text" id="mentorName" name="mentorName" required />
+                        </div>
+                        <div>
+                            <label for="teamMembers">Team Members (Enter 5 names):</label>
+                            <label for="teamMembers"> Enter Vice President</label>
+                            <input type="text" id="member1" name="Member" required />
+                            <label for="teamMembers"> Enter General Secretary</label>
+                            <input type="text" id="member2" name="Enter Media Secretary" required />
+                            <label for="teamMembers"> Enter Member</label>
+                            <input type="text" id="member3" name="Member" required />
+                            <label for="teamMembers"> Enter Member</label>
+                            <input type="text" id="member4" name="Member" required />
+                            <label for="teamMembers"> Enter Member</label>
+                            <input type="text" id="member5" name="Member" required />
+                        </div>
+                        <div>
+                            <label for="headOfSociety">Head of Society:</label>
+                            <input type="text" id="headOfSociety" name="headOfSociety" required />
+                        </div>
+                        <div>
+                            <label for="plans">Plans:</label>
+                            <textarea id="reasontext" rows="5" cols="50" placeholder="Enter Plans ..."></textarea>
+                        </div>
+                        <input id="SubmitBtn" type="button" value="Submit" />
+                    </form>
                 </div>
-            </section>
-</body>
+            </div>
+        </section>
+    </div>
+    </body>
+    </html>
+</span>
 
-
+    
+    
