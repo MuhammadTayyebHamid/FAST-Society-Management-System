@@ -278,10 +278,60 @@ td {
     padding-left: 10px;
 }
 
-#dateInput{
-    width: 100%;
+#response {
+    width: 70%;
     padding: 7px;
     border: 1px solid gray;
     border-radius: 6px;
     outline: none;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+#dateInput {
+    width: 70%;
+    padding: 7px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 30px;
+}
+
+#dateInput{
+    width: 70%;
+    padding: 7px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 30px;
+}
+
+#timeInput {
+    width: 70%;
+    padding: 7px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 30px;
+}
+
+#doneButton {
+    width: 100px;
+    height: 45px;
+    margin: auto;
+    border: none;
+    border-radius: 10px; 
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+    display: block; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    #doneButton:hover {
+        background-color: #4c9c7f;
+        cursor: pointer;
+    }
+

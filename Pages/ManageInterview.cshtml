@@ -77,7 +77,7 @@
                             <td>Name</td>
                             <td>Email</td>
                             <td>Roll NO</td>
-                            <td>Role</td>
+      
                             <td>Response</td>
 
                         </tr>
@@ -86,7 +86,7 @@
                             <td>Huzaifa</td>
                             <td>i210586@nu.edu.pk</td>
                             <td>21I-0586</td>
-                            <td>Member</td>
+             
                             <td>
                                 <select id="response" onchange="handleResponseChange(this)">
                                     <option value="">Select</option>
@@ -105,9 +105,18 @@
                             <td>Tayyeb </td>
                             <td>i210378@nu.edu.pk</td>
                             <td>21I-0378</td>
-                            <td>President</td>
+      
                             <td>
-                                <input id="sub-button" type="button" value="Conduct" />
+                                <select id="response" onchange="handleResponseChange(this)">
+                                    <option value="">Select</option>
+                                    <option value="Accept">Accept</option>
+                                    <option value="Reject">Reject</option>
+                                </select>
+                                <label id="dateLabel" style="display: none;">Date</label>
+                                <input type="date" id="dateInput" style="display: none;" />
+                                <label id="timeLabel" style="display: none;">Time</label>
+                                <input type="time" id="timeInput" style="display: none;" />
+                                <input type="button" id="doneButton" value="Done" style="display: none;" />
                             </td>
 
                         </tr>
@@ -115,9 +124,18 @@
                             <td>M Ibrahim</td>
                             <td>i210797@nu.edu.pk</td>
                             <td>21I-0797</td>
-                            <td>Member</td>
+      
                             <td>
-                                <input id="sub-button" type="button" value="Conduct" />
+                                <select id="response" onchange="handleResponseChange(this)">
+                                    <option value="">Select</option>
+                                    <option value="Accept">Accept</option>
+                                    <option value="Reject">Reject</option>
+                                </select>
+                                <label id="dateLabel" style="display: none;">Date</label>
+                                <input type="date" id="dateInput" style="display: none;" />
+                                <label id="timeLabel" style="display: none;">Time</label>
+                                <input type="time" id="timeInput" style="display: none;" />
+                                <input type="button" id="doneButton" value="Done" style="display: none;" />
                             </td>
 
                         </tr>
@@ -138,11 +156,12 @@
 
 <script>
     function handleResponseChange(selectElement) {
-        var dateLabel = document.getElementById('dateLabel');
-        var dateInput = document.getElementById('dateInput');
-        var timeLabel = document.getElementById('timeLabel');
-        var timeInput = document.getElementById('timeInput');
-        var doneButton = document.getElementById('doneButton');
+        var parentTd = selectElement.parentNode;
+        var dateLabel = parentTd.querySelector('#dateLabel');
+        var dateInput = parentTd.querySelector('#dateInput');
+        var timeLabel = parentTd.querySelector('#timeLabel');
+        var timeInput = parentTd.querySelector('#timeInput');
+        var doneButton = parentTd.querySelector('#doneButton');
 
         if (selectElement.value === 'Accept') {
             dateLabel.style.display = 'block';
@@ -158,5 +177,6 @@
             doneButton.style.display = 'none';
         }
     }
+
 </script>
 
