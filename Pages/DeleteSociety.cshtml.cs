@@ -17,6 +17,7 @@ namespace SE_Project.Pages
         [BindProperty]
         public string societyName { get; set; }
 
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
