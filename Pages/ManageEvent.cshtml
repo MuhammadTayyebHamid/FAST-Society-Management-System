@@ -1,6 +1,5 @@
 ﻿@page
-@model SE_Project.Pages.ManageEvent
-
+@model SE_Project.Pages.ManageEventModel
 @{
     Layout = null;
 }
@@ -69,42 +68,39 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+
                 <div class="main-body">
                     <div class="addEvent-box">
                         <h1>Add Event</h1>
-                        <form>
+                        <form method="post">
                             <label>Name</label>
-                            <input type="text" placeholder="Enter Event Name" />
+                            <input type="text" id="EventName" name="Event.Name" asp-for="Event.Name" placeholder="Enter Event Name" />
                             <label>Location</label>
-                            <input type="text" placeholder="Enter Location " />
+                            <input type="text" id="EventLocation" name="Event.Location" asp-for="Event.Location" placeholder="Enter Location" />
                             <label>Date</label>
-                            <input type="date" />
+                            <input type="date" id="EventDate" name="Event.Date" asp-for="Event.Date" />
                             <label>Start Time</label>
-                            <input type="time" />
+                            <input type="time" id="EventStartTime" name="Event.StartTime" asp-for="Event.StartTime" />
                             <label>End Time</label>
-                            <input type="time" />
-                     
-                            <input id="sub-button" type="button" value="Submit" />
+                            <input type="time" id="EventEndTime" name="Event.EndTime" asp-for="Event.EndTime" />
+
+                            <input id="sub-button" type="submit" value="Submit" />
                         </form>
                     </div>
 
                     <div class="RemoveEvent-box">
                         <h1>Remove Event</h1>
-                        <form>
-
+                        <form method="post">
                             <label>Name</label>
-                            <input type="email" placeholder="Enter Event Name" />
-                            <label>Date</label>
-                            <input type="date" />
-                            <label>Reason</label>
-                            <textarea id="reasontext" rows="9" cols="50" placeholder="Enter Reason ..."></textarea>
-                            <input id="SubmitBtn" type="button" value="Submit" />
+                            <input type="text" id="removeEventName" name="RemoveEvent" asp-for="RemoveEvent" placeholder="Enter Event Name" />
+                            <textarea id="removeEventReason" name="RemoveEventReason" rows="9" cols="50" placeholder="Enter Reason ..."></textarea>
+                            <input id="removeSubmitBtn" type="submit" value="Submit" asp-page-handler="Remove" />
                         </form>
                     </div>
 
                 </div>
-
             </section>
+
         </div>
 
     </body>
