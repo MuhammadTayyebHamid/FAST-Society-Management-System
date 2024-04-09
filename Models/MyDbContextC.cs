@@ -13,10 +13,8 @@ namespace SE_Project.Models
         public DbSet<Tasks> Tasks { get; set; } // Add DbSet for Tasks
 
 
-        public MyDbContext(DbContextOptions options) : base(options) {
-            
+        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
+        {
         }
-
-        
     }
 }
