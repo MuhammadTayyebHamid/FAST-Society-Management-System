@@ -6,9 +6,10 @@ namespace SE_Project.Models
     {
         public DbSet<Society> Societies { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseInMemoryDatabase("MyDb");
+        public MyDbContext(DbContextOptions options) : base(options) {
+            
         }
+
+        
     }
 }

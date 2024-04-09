@@ -4,8 +4,9 @@ namespace SE_Project.Pages;
 
 public class SocietyHead : PageModel
 {
-    public void OnGet()
+    public string SocietyName { get; set; }
+    public void OnGet(string societyName)
     {
-        
+        SocietyName = societyName;
     }
 }

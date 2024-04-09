@@ -19,11 +19,11 @@
 <div class="container">
     <div class="login form">
         <header>Login</header>
-        <form action="#">
-            <input type="text" placeholder="Enter your email">
-            <input type="password" placeholder="Enter your password">
+        <form method="post">
+            <input type="text" placeholder="Enter your Username" asp-for="Username" name="Username">
+            <input type="password" placeholder="Enter your Password" asp-for="Password" name="Password">
             <a href="#">Forgot password?</a>
-            <input type="button" class="button" value="Login">
+            <input type="submit" class="button" value="Login">
         </form>
     </div>
 </div>

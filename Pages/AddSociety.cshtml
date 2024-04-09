@@ -1,6 +1,7 @@
 ﻿@page
 @model SE_Project.Pages.AddSocietyModel
 @{
+    ViewData["Title"] = "Add Society";
     Layout = null;
 }
 
@@ -57,37 +58,68 @@
                    
                 <div class="addMember-box">
                     <h1>Add Society</h1>
-                    <form method="post">
+                        <form method="post">
+                            @if (!ModelState.IsValid)
+                            {
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach (var modelState in ViewData.ModelState.Values)
+                                        {
+                                            foreach (var error in modelState.Errors)
+                                            {
+                                                <li>@error.ErrorMessage</li>
+                                            }
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        
                         <div>
-                            <label for="societyName">Society Name:</label>
-                            <input type="text" id="societyName" name="societyName" required />
+                                <label>Society Name:</label>
+                                <input type="text" id="societyName" name="society.Name" asp-for="society.Name" />
                         </div>
                         <div>
-                            <label for="mentorName">Mentor Name:</label>
-                            <input type="text" id="mentorName" name="mentorName" required />
+                                <label>Mentor Name:</label>
+                                <input type="text" id="mentorName" name="society.MentorName" asp-for="society.MentorName" />
                         </div>
                         <div>
-                            <label for="teamMembers">Team Members (Enter 5 names):</label>
-                            <label for="teamMembers"> Enter Vice President</label>
-                            <input type="text" id="member1" name="Member" required />
-                            <label for="teamMembers"> Enter General Secretary</label>
-                            <input type="text" id="member2" name="Enter Media Secretary" required />
-                            <label for="teamMembers"> Enter Member</label>
-                            <input type="text" id="member3" name="Member" required />
-                            <label for="teamMembers"> Enter Member</label>
-                            <input type="text" id="member4" name="Member" required />
-                            <label for="teamMembers"> Enter Member</label>
-                            <input type="text" id="member5" name="Member" required />
+                            <label>Team Members (Enter 5 names):</label>
+                                <label> Enter Vice President</label>
+                                <input type="text" id="member1" name="society.Member1" asp-for="society.Member1" />
+                                <label> Enter Password</label>
+                                <input type="text" id="member1" name="society.Password1" asp-for="society.Password1" />
+
+                                <label> Enter General Secretary</label>
+                                <input type="text" id="member2" name="society.Member2" asp-for="society.Member2" />
+                                <label> Enter Password</label>
+                                <input type="text" id="member1" name="society.Password2" asp-for="society.Password2" />
+
+                                <label> Enter Member</label>
+                                <input type="text" id="member3" name="society.Member3" asp-for="society.Member3" />
+                                <label> Enter Password</label>
+                                <input type="text" id="member1" name="society.Password3" asp-for="society.Password3" />
+
+                                <label> Enter Member</label>
+                                <input type="text" id="member4" name="society.Member4" asp-for="society.Member4" />
+                                <label> Enter Password</label>
+                                <input type="text" id="member1" name="society.Password4" asp-for="society.Password4" />
+
+                                <label> Enter Member</label>
+                                <input type="text" id="member5" name="society.Member5" asp-for="society.Member5" />
+                                <label> Enter Password</label>
+                                <input type="text" id="member1" name="society.Password5" asp-for="society.Password5" />
                         </div>
                         <div>
-                            <label for="headOfSociety">Head of Society:</label>
-                            <input type="text" id="headOfSociety" name="headOfSociety" required />
+                                <label>Head of Society:</label>
+                                <input type="text" id="headOfSociety" name="society.Head" asp-for="society.Head" />
+                                <label>Enter Password:</label>
+                                <input type="text" id="headOfSociety" name="society.HeadPassword" asp-for="society.HeadPassword" />
                         </div>
                         <div>
-                            <label for="plans">Plans:</label>
-                            <textarea id="reasontext" rows="5" cols="50" placeholder="Enter Plans ..."></textarea>
+                                <label>Plans:</label>
+                                <textarea id="reasontext" rows="5" cols="50" placeholder="Enter Plans ..." asp-for="society.Plans"></textarea>
                         </div>
-                        <input id="SubmitBtn" type="button" value="Submit" />
+                        <input id="SubmitBtn" type="submit" value="Submit" />
                     </form>
                 </div>
             </div>

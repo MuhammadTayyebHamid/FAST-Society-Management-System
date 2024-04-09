@@ -8,24 +8,33 @@ namespace SE_Project.Pages
     {
         private readonly MyDbContext _context;
 
-        public List<Society> Societies { get; set; } = new List<Society>();
-
-        [BindProperty]
-        public Society NewSociety { get; set; }
-
         public AddSocietyModel(MyDbContext context)
         {
             _context = context;
         }
-        public void OnGet()
+
+        [BindProperty]
+        public Society society { get; set; }
+
+        public IActionResult OnPost()
         {
-            Societies = _context.Societies.ToList();
-        }
-        public IActionResult onPost()
-        {
-            _context.Societies.Add(NewSociety);
-            _context.SaveChangesAsync();
-            return RedirectToPage("./Index"); // Redirect to index page after adding
+            if (!ModelState.IsValid)
+            {
+                // Log ModelState errors
+                foreach (var value in ModelState.Values)
+                {
+                    foreach (var error in value.Errors)
+                    {
+                        // Log or handle validation error messages
+                        Console.WriteLine($"Validation Error: {error.ErrorMessage}");
+                    }
+                }
+                return Page();
+            }
+
+            _context.Societies.Add(society);
+            _context.SaveChanges();
+            return RedirectToPage("/Index"); // Redirect to homepage
         }
     }
 }
