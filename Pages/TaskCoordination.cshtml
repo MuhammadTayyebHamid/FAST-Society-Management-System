@@ -1,104 +1,104 @@
 ﻿@page
-@model SE_Project.Pages.ManageMember
+@model SE_Project.Pages.TaskCoordinationModel
 
 @{
     Layout = null;
 }
 
 
-<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>SMS</title>
-  <link rel="stylesheet" href="/css/TaskCoordination.css" />
-  <!-- Font Awesome Cdn Link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-</head>
-<body>
-  <div class="container">
-    <nav>
-      <div class="navbar">
-        <div class="logo">
-          <img src="/images/logo.jpg" alt="">
-          <h1>SMS</h1>
-        </div>
-        <ul>
-          <li><a href="/SocietyHead">
-              <span class="nav-item">Home</span>
-            </a>
-          </li>
-          
-          <li>
-            <a href="/ManageMember">
-              <span class="nav-item">Manage Member</span>
-            </a>
-          </li>
-          <li>
-            <a href="ManageEvent">
-              <span class="nav-item">Manage Event</span>
-            </a>
-          </li>
-          <li>
-            <a href="/TaskCoordination">
-              <span class="nav-item">Task Coordination</span>
-            </a>
-          </li>
+<span style="font-family: verdana, geneva, sans-serif;">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>SMS</title>
+        <link rel="stylesheet" href="/css/TaskCoordination.css" />
+        <!-- Font Awesome Cdn Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="/images/logo.jpg" alt="">
+                        <h1>SMS</h1>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="/SocietyHead">
+                                <span class="nav-item">Home</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/ManageMember">
+                                <span class="nav-item">Manage Member</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ManageEvent">
+                                <span class="nav-item">Manage Event</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/TaskCoordination">
+                                <span class="nav-item">Task Coordination</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="/ManageInterview">
                                 <span class="nav-item">Manage Interview</span>
                             </a>
                         </li>
 
-          <li>
-            <a href="#" class="logout">
-              <i class="fas fa-sign-out-alt"></i>
-              <span class="nav-item">Logout</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+                        <li>
+                            <a href="#" class="logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span class="nav-item">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-  <section class="main">
-    <div class="main-top">
-      <p>Society Management System</p>
-    </div>
-    <div class="main-body">
-      
-      <div class="assignTask-box">
-        <h1>Assign Task</h1>
-        <form>
-          <label>Roll No</label>
-          <input type="text" placeholder="Enter Roll No i.e. 24I-0823" />
-          <label>Deadline</label>
-          <input type="date" />
-          <label>Description</label>
-          <textarea id="descriptionText" rows="10" cols="50" placeholder="Enter Description ..."></textarea>
-          <input type="button" value="Assign" />
-        </form>
-      </div>
-      
-      <div class="meetingSchedule-box">
-              <h1>Meeting Schedule</h1>
-              <form>
-                <label>Subject</label>
-                <input type="text" placeholder="Enter Subject" />
-                <label>Date</label>
-                <input type="date" />
-                <label>Time</label>
-                <input type="time" />
-                <label>Venue</label>
-                <input id="venueText"type="text" placeholder="Enter Venue" />
-                <input id="scheduleBtn" type="button" value="Schedule" />
-              </form>
-            </div>
+            <section class="main">
+                <div class="main-top">
+                    <p>Society Management System</p>
+                </div>
+                <div class="main-body">
+                    <div class="assignTask-box">
+                        <h1>Assign Task</h1>
+                        <form method="post">
+                            <label>Roll No</label>
+                            <input type="text" id="RollNo" name="Task.RollNo" asp-for="Task.RollNo" placeholder="Enter Roll No i.e. 24I-0823" />
+                            <label>Deadline</label>
+                            <input type="date" id="Deadline" name="Task.Deadline" asp-for="Task.Deadline" />
+                            <label>Description</label>
+                            <textarea id="Description" name="Task.Description" asp-for="Task.Description" rows="10" cols="50" placeholder="Enter Description ..."></textarea>
+                            <input type="submit" value="Assign" />
+                        </form>
+                    </div>
+                    <div class="meetingSchedule-box">
+                        <h1>Meeting Schedule</h1>
+                        <form>
+                            <label>Subject</label>
+                            <input type="text" placeholder="Enter Subject" />
+                            <label>Date</label>
+                            <input type="date" />
+                            <label>Time</label>
+                            <input type="time" />
+                            <label>Venue</label>
+                            <input id="venueText" type="text" placeholder="Enter Venue" />
+                            <input id="scheduleBtn" type="button" value="Schedule" />
+                        </form>
+                    </div>
 
                 </div>
 
 
-  </section>
-  </div>
+            </section>
+        </div>
 
-</body>
+    </body>
 </html>
 </span>
