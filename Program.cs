@@ -1,10 +1,15 @@
+using Microsoft.EntityFrameworkCore;
 using SE_Project.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<MyDbContext>();
+builder.Services.AddDbContext<MyDbContext>(options =>
+{
+    string connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+    options.UseSqlServer(connectionString);
+});
 
 var app = builder.Build();
 

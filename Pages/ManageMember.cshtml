@@ -1,117 +1,107 @@
 ﻿@page
-@model SE_Project.Pages.ManageMember
-
+@model SE_Project.Pages.ManageMemberModel
 @{
     Layout = null;
 }
 
-
-<span style="font-family: verdana, geneva, sans-serif;">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>SMS</title>
-        <link rel="stylesheet" href="/css/ManageMember.css" />
-        <!-- Font Awesome Cdn Link -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    </head>
-    <body>
-        <div class="container">
-            <nav>
-                <div class="navbar">
-                    <div class="logo">
-                        <img src="/images/logo.jpg" alt="">
-                        <h1>SMS</h1>
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="/SocietyHead">
-                                <span class="nav-item">Home</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ManageMember">
-                                <span class="nav-item">Manage Member</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="ManageEvent">
-                                <span class="nav-item">Manage Event</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/TaskCoordination">
-                                <span class="nav-item">Task Coordination</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ManageInterview">
-                                <span class="nav-item">Manage Interview</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="logout">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span class="nav-item">Logout</span>
-                            </a>
-                        </li>
-                    </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SMS</title>
+    <link rel="stylesheet" href="/css/ManageMember.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <img src="/images/logo.jpg" alt="">
+                    <h1>SMS</h1>
                 </div>
-            </nav>
+                <ul>
+                    <li>
+                        <a href="/SocietyHead">
+                            <span class="nav-item">Home</span>
+                        </a>
+                    </li>
 
-            <section class="main">
-                <div class="main-top">
-                    <a class="navbar-brand" asp-area="" asp-page="/Index">Society Management System</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="main-body">
-                    <div class="addMember-box">
-                        <h1>Add Member</h1>
-                        <form>
-                            <label>First Name</label>
-                            <input type="text" placeholder="Enter First Name" />
-                            <label>Last Name</label>
-                            <input type="text" placeholder="Enter Last Name" />
-                            <label>Email</label>
-                            <input type="email" placeholder="Enter Email" />
-                            <label>Roll No</label>
-                            <input type="text" placeholder="Enter Roll No i.e. 24I-0823" />
-                            <label>Role</label>
-                            <select id="selectRole" name="Role">
-                                <option>President</option>
-                                <option>Vice President</option>
-                                <option>General Secretary</option>
-                                <option>Media Secratary</option>
-                                <option>Member</option>
+                    <li>
+                        <a href="/ManageMember">
+                            <span class="nav-item">Manage Member</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ManageEvent">
+                            <span class="nav-item">Manage Event</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/TaskCoordination">
+                            <span class="nav-item">Task Coordination</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ManageInterview">
+                            <span class="nav-item">Manage Interview</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="nav-item">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-                            </select>
-                            <input id="sub-button" type="button" value="Submit" />
-                        </form>
-                    </div>
+        <section class="main">
+            <div class="main-top">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Society Management System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
 
-                    <div class="RemoveMember-box">
-                        <h1>Remove Member</h1>
-                        <form>
-
-                            <label>Email</label>
-                            <input type="email" placeholder="Enter Email" />
-                            <label>Roll No</label>
-                            <input type="text" placeholder="Enter Roll No i.e. 24I-0823" />
-                            <label>Reason</label>
-                            <textarea id="reasontext" rows="9" cols="50" placeholder="Enter Reason ..."></textarea>
-                            <input id="SubmitBtn" type="button" value="Submit" />
-                        </form>
-                    </div>
+            <div class="main-body">
+                <div class="addMember-box">
+                    <h1>Add Member</h1>
+                    <form method="post">
+                        <label>Name</label>
+                        <input type="text" id="name" name="member.Name" asp-for="member.Name" placeholder="Enter Name" />
+                        <label>Password</label>
+                        <input type="password" id="password" name="member.Password" asp-for="member.Password" placeholder="Enter Password" />
+                        <label>Email</label>
+                        <input type="email" id="email" name="member.Email" asp-for="member.Email" placeholder="Enter Email" />
+                        <label>Roll No</label>
+                        <input type="text" id="rollNo" name="member.RollNo" asp-for="member.RollNo" placeholder="Enter Roll No i.e. 24I-0823" />
+                        <label>Role</label>
+                        <select id="selectRole" name="member.Role" asp-for="member.Role">
+                            <option value="President">President</option>
+                            <option value="Vice President">Vice President</option>
+                            <option value="General Secretary">General Secretary</option>
+                            <option value="Media Secretary">Media Secretary</option>
+                            <option value="Member">Member</option>
+                        </select>
+                        <input id="sub-button" type="submit" value="Submit" />
+                    </form>
 
                 </div>
 
-            </section>
-        </div>
+                <div class="RemoveMember-box">
+                    <h1>Remove Member</h1>
+                    <form method="post">
+                        <label>Name</label>
+                        <input type="text" id="removeName" name="RemoveMember" asp-for="RemoveMember" placeholder="Enter Name" />
+                        <input id="removeSubmitBtn" type="submit" value="Submit" asp-page-handler="Remove" />
+                    </form>
+                </div>
 
-    </body>
+            </div>
+        </section>
+    </div>
+</body>
 </html>
-</span>

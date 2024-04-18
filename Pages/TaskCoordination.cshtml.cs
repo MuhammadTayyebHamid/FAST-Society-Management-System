@@ -1,11 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SE_Project.Pages;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using SE_Project.Models;
+using System.Threading.Tasks;
 
-public class TaskCoordination : PageModel
+namespace SE_Project.Pages
 {
-    public void OnGet()
+    public class TaskCoordinationModel : PageModel
     {
-        
+        private readonly MyDbContext _context;
+
+        public TaskCoordinationModel(MyDbContext context)
+        {
+            _context = context;
+        }
+
+        [BindProperty]
+        public Tasks Task { get; set; }
+
+        public async Task<IActionResult> OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                // Log ModelState errors
+                foreach (var value in ModelState.Values)
+                {
+                    foreach (var error in value.Errors)
+                    {
+                        // Log or handle validation error messages
+                        Console.WriteLine($"Validation Error: {error.ErrorMessage}");
+                    }
+                }
+                return Page();
+            }
+            _context.Tasks.Add(Task);
+            await _context.SaveChangesAsync();
+            return RedirectToPage("/Index");
+        }
     }
 }
