@@ -142,21 +142,20 @@ h1{
 }
 
 
-table {
-    width: 95%;
+.announcementTable {
+    width: 100%;
     border: 1px solid;
     border-collapse: collapse;
     background: #fff;
 }
 
-tr{
+.announcementTable tr {
     height: 50px;
     border: 1px solid;
 }
-td{
+.announcementTable td {
     border: 1px solid;
     padding-left: 10px;
-
 }
 
 
@@ -166,3 +165,4 @@ tr:hover {
 #societyColumn{
     width: 200px;
 }
+
