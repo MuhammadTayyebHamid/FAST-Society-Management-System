@@ -46,6 +46,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/CreateMeeting">
+                                <span class="nav-item">Create Meeting</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="/ManageInterview">
                                 <span class="nav-item">Manage Interview</span>
                             </a>
@@ -76,20 +81,6 @@
                             <label>Description</label>
                             <textarea id="Description" name="Task.Description" asp-for="Task.Description" rows="10" cols="50" placeholder="Enter Description ..."></textarea>
                             <input type="submit" value="Assign" />
-                        </form>
-                    </div>
-                    <div class="meetingSchedule-box">
-                        <h1>Meeting Schedule</h1>
-                        <form>
-                            <label>Subject</label>
-                            <input type="text" placeholder="Enter Subject" />
-                            <label>Date</label>
-                            <input type="date" />
-                            <label>Time</label>
-                            <input type="time" />
-                            <label>Venue</label>
-                            <input id="venueText" type="text" placeholder="Enter Venue" />
-                            <input id="scheduleBtn" type="button" value="Schedule" />
                         </form>
                     </div>
 

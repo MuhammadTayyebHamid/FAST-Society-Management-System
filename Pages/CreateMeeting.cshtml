@@ -1,9 +1,9 @@
 ﻿@page
-@model SE_Project.Pages.ManageEventModel
+@model SE_Project.Pages.CreateMeeting
+
 @{
     Layout = null;
 }
-
 
 
 <span style="font-family: verdana, geneva, sans-serif;">
@@ -11,7 +11,7 @@
     <html lang="en">
     <head>
         <title>SMS</title>
-        <link rel="stylesheet" href="/css/ManageEvent.css" />
+        <link rel="stylesheet" href="/css/TaskCoordination.css" />
         <!-- Font Awesome Cdn Link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     </head>
@@ -55,6 +55,7 @@
                                 <span class="nav-item">Manage Interview</span>
                             </a>
                         </li>
+
                         <li>
                             <a href="#" class="logout">
                                 <i class="fas fa-sign-out-alt"></i>
@@ -67,45 +68,32 @@
 
             <section class="main">
                 <div class="main-top">
-                    <a class="navbar-brand" asp-area="" asp-page="/Index">Society Management System</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <p>Society Management System</p>
                 </div>
-
                 <div class="main-body">
-                    <div class="addEvent-box">
-                        <h1>Add Event</h1>
+                    <div class="meetingSchedule-box">
+                        <h1>Meeting Schedule</h1>
                         <form method="post">
-                            <label>Name</label>
-                            <input type="text" id="EventName" name="Event.Name" asp-for="Event.Name" placeholder="Enter Event Name" />
-                            <label>Location</label>
-                            <input type="text" id="EventLocation" name="Event.Location" asp-for="Event.Location" placeholder="Enter Location" />
+                            <label>MeetingTopic</label>
+                            <input type="text" id="MeetingTopic" name="Meetings.MeetingTopic" asp-for="Meetings.MeetingTopic" placeholder="Enter topic" />
+                            <label>Society</label>
+                            <input type="text" id="Society" name="Meetings.Society" asp-for="Meetings.Society" placeholder="Enter topic" />
                             <label>Date</label>
-                            <input type="date" id="EventDate" name="Event.Date" asp-for="Event.Date" />
-                            <label>Start Time</label>
-                            <input type="time" id="EventStartTime" name="Event.StartTime" asp-for="Event.StartTime" />
-                            <label>End Time</label>
-                            <input type="time" id="EventEndTime" name="Event.EndTime" asp-for="Event.EndTime" />
-
-                            <input id="sub-button" type="submit" value="Submit" />
-                        </form>
-                    </div>
-
-                    <div class="RemoveEvent-box">
-                        <h1>Remove Event</h1>
-                        <form method="post">
-                            <label>Name</label>
-                            <input type="text" id="removeEventName" name="RemoveEvent" asp-for="RemoveEvent" placeholder="Enter Event Name" />
-                            <textarea id="removeEventReason" name="RemoveEventReason" rows="9" cols="50" placeholder="Enter Reason ..."></textarea>
-                            <input id="removeSubmitBtn" type="submit" value="Submit" asp-page-handler="Remove" />
+                            <input type="date" id="startdate" name="Meetings.startdate" asp-for="Meetings.startdate" />
+                            <label>start Time</label>
+                            <input type="time" id="starttime" name="Meetings.starttime" asp-for="Meetings.starttime" />
+                            <label>end Time</label>
+                            <input type="time" id="endtime" name="Meetings.endtime" asp-for="Meetings.endtime" />
+                            <label>location</label>
+                            <input type="text" id="location" name="Meetings.location" asp-for="Meetings.location" placeholder="Enter topic" />
+                            <input type="submit" value="Assign" />
                         </form>
                     </div>
 
                 </div>
-            </section>
 
+
+            </section>
         </div>
 
     </body>

@@ -11,6 +11,9 @@ namespace SE_Project.Models
         [Required(ErrorMessage = "The Name field is required.")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "The Society field is required.")]
+        public string Society { get; set; }
+
         [Required(ErrorMessage = "The Password field is required.")]
         public string Password { get; set; }
 

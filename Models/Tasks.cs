@@ -5,6 +5,7 @@ namespace SE_Project.Models
 {
     public class Tasks
     {
+        [Required(ErrorMessage = "The Description field is required.")]
         public int Id { get; set; }
         [Required(ErrorMessage = "The RollNo field is required.")]
         public string RollNo { get; set; }

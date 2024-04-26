@@ -12,7 +12,7 @@ using SE_Project.Models;
 namespace SE_Project.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240409181559_Tasks")]
+    [Migration("20240426163006_Tasks")]
     partial class Tasks
     {
         /// <inheritdoc />
@@ -24,6 +24,27 @@ namespace SE_Project.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("SE_Project.Models.Announcements", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Announcement")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("societyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("announcements");
+                });
 
             modelBuilder.Entity("SE_Project.Models.Events", b =>
                 {
@@ -80,6 +101,10 @@ namespace SE_Project.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RollNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Society")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

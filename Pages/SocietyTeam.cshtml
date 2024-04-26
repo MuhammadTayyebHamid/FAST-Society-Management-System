@@ -74,99 +74,133 @@
 
                 <h2>Announcements</h2>
                 <br />
-                <table class="announcementTable">
+                @if (Model.Announcements != null && Model.Announcements.Any())
+                {
+                    
+                    <br />
+                    <table class="announcementTable">
 
-                    <tr>
-                        <td id="societyColumn">
-                            <h3>Computing Society</h3>
-                        </td>
-                        <td>
-                            <p>Workshop will be held on Tuesday!</p>
-                        </td>
+                        <tbody>
 
-                    </tr>
+                            <tr>
+                                <td>
+                                    <center> Society Name </center>
+                                </td>
+                                <td>
+                                    <center> Announcement </center>
+                                </td>
+                            </tr>
 
-                    <tr>
-                        <td>
-                            <h3>Music Society</h3>
-                        </td>
-                        <td>
-                            <p>Concert Ticekts are available at the front desk.</p>
-                        </td>
+                            @foreach (var announcement in Model.Announcements)
+                            {
+                                <tr>
+                                    <td>
+                                        <center> @announcement.societyName </center>
+                                    </td>
+                                    <td>
+                                        <center> @announcement.Announcement </center>
+                                    </td>
+                                </tr>
+                            }
 
-                    </tr>
-                </table>
-
-                <br/>
+                        </tbody>
+                    </table>
+                }
                 <h2>Tasks</h2>
-                <br />
-                <table class="announcementTable">
+                @if (Model.Task != null && Model.Task.Any())
+                {
+                    
+                    <br />
+                    <table class="announcementTable">
 
-                    <tr>
-                        <td id="societyColumn">
-                            <h3>Task 1</h3>
-                        </td>
-                        <td>
-                            <p>Tasksssssssssssss.</p>
-                        </td>
+                        <tbody>
 
-                    </tr>
+                            <tr>
+                                <td>
+                                    <center> Task Description </center>
+                                </td>
+                                <td style="width: 200px;">
+                                    <!-- Adjusted width here -->
+                                    <center> Deadline </center>
+                                </td>
 
-                    <tr>
-                        <td>
-                            <h3>Task 2</h3>
-                        </td>
-                        <td>
-                            <p>Tasksssssssssssss.</p>
-                        </td>
+                            </tr>
 
-                    </tr>
-                </table>
+                            @foreach (var Task in Model.Task)
+                            {
+                                <tr>
+                                    <td>
+                                        <center> @Task.Description </center>
+                                    </td>
+                                    <td style="width: 200px;">
+                                        <!-- Adjusted width here -->
+                                        <center> @Task.Deadline </center>
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                }
+
 
                 <br />
                 <h2>Meetings</h2>
                 <br />
-                <table class="announcementTable">
-                    <tr>
-                        <td>
-                            <h3>Meeting Topic</h3>
-                        </td>
-                        <td>
-                            <h3>Location</h3>
-                            </td>
-                        <td>
-                            <h3>Date</h3>
-                        </td>
-                        <td>
-                            <h3>Start Time</h3>
-                        </td>
-                        <td>
-                            <h3>End Time</h3>
-                        </td>
+                @if (Model.Meeting != null && Model.Meeting.Any())
+                {
 
-                    </tr>
+                    <br />
+                    <table class="announcementTable">
 
-                    <tr>
-                        <td>Budget Dissucssion</td>
-                        <td>C-101</td>
-                        <td>18/04/2024</td>
-                        <td>2:00 PM</td>
-                        <td>5:00 PM</td>
+                        <tbody>
 
-                        
-                    </tr>
+                            <tr>
+                                <td>
+                                    <center> Meeting Topic </center>
+                                </td>
+                                <td>
+                                    <!-- Adjusted width here -->
+                                    <center> location </center>
+                                </td>
+                                <td>
+                                    <center> Date </center>
+                                </td>
+                                <td>
+                                    <center> start time </center>
+                                </td>
+                                <td>
+                                    <center> end time </center>
+                                </td>
 
-                    <tr>
-                        <td>Event Scheduling</td>
-                        <td>Cricket Ground</td>
-                        <td>22/04/2024</td>
-                        <td>11:00 AM</td>
-                        <td>5:00 PM</td>
+                            </tr>
 
-                    </tr>
+                            @foreach (var meeting in Model.Meeting)
+                            {
+                                <tr>
+                                    <td>
+                                        <center> @meeting.MeetingTopic </center>
+                                    </td>
+                                    <td>
+                                        <center> @meeting.location </center>
+                                    </td>
+                                    <td>
+                                        <center> @meeting.startdate </center>
+                                    </td>
+                                    <td>
+                                        <center> @meeting.starttime </center>
+                                    </td>
+                                    <td>
+                                        <center> @meeting.endtime </center>
+                                    </td>
 
+                                </tr>
+                            }
 
-                </table>
+                        </tbody>
+                    </table>
+                }
 
 
 

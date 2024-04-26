@@ -43,6 +43,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/CreateMeeting">
+                            <span class="nav-item">Create Meeting</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/ManageInterview">
                             <span class="nav-item">Manage Interview</span>
                         </a>
@@ -72,6 +77,8 @@
                     <form method="post">
                         <label>Name</label>
                         <input type="text" id="name" name="member.Name" asp-for="member.Name" placeholder="Enter Name" />
+                        <label>Society</label>
+                        <input type="text" id="name" name="member.Society" asp-for="member.Society" placeholder="Enter Society" />
                         <label>Password</label>
                         <input type="password" id="password" name="member.Password" asp-for="member.Password" placeholder="Enter Password" />
                         <label>Email</label>

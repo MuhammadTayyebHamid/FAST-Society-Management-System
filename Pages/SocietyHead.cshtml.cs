@@ -7,7 +7,6 @@ namespace SE_Project.Pages;
 
 public class SocietyHead : PageModel
 {
-    [BindProperty]
     public string SocietyName { get; set; }
     [BindProperty]
     public string announcement { get; set; }
@@ -18,12 +17,14 @@ public class SocietyHead : PageModel
         _context = context;
     }
 
-    [BindProperty]
-    public Announcements Announcement { get; set; }
+    public Models.Announcements Announcement { get; set; }
+    public List<Models.Announcements> Announcements = new List<Models.Announcements>();
 
     public void OnGet(string societyName)
     {
         SocietyName = societyName;
+        TempData["SocietyName"] = societyName;
+        LoadAnnouncements();
     }
 
     public IActionResult OnPost()
@@ -42,13 +43,29 @@ public class SocietyHead : PageModel
             return Page();
         }
 
-        Announcement = new Announcements();
-        this.Announcement.societyName = this.SocietyName;
+        Announcement = new Models.Announcements();
+        Console.WriteLine("Society : " + SocietyName);
+        this.Announcement.societyName = TempData["SocietyName"] as string;
         this.Announcement.Announcement = this.announcement;
-        _context.announcements.Add(Announcement);
+        _context.announcements.Add(this.Announcement);
         _context.SaveChanges();
+        LoadAnnouncements();
         return RedirectToPage("/Index"); // Redirect to homepage
     }
 
+    private void LoadAnnouncements()
+    {
+        // Retrieve announcements associated with the current society name
+        if (TempData.TryGetValue("SocietyName", out object societyNameObj))
+        {
+            // Retrieve announcements associated with the society name
+            string societyName = societyNameObj as string;
+            TempData["SocietyName"] = societyName;
+            this.SocietyName = societyName;
+            this.Announcements = _context.announcements.Where(a => a.societyName == societyName).ToList();
+        }
+
+
+    }
 
 }
