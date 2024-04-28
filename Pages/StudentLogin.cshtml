@@ -1,0 +1,31 @@
+﻿@page
+@model SE_Project.Pages.studentlogin
+@{
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration Form</title>
+    <link rel="stylesheet" href="css/Login.css">
+</head>
+<body>
+<div class="container">
+    <div class="login form">
+        <header>Login</header>
+        <form method="post">
+            <input type="text" placeholder="Enter your Username" asp-for="Username" name="Username">
+            <input type="password" placeholder="Enter your Password" asp-for="Password" name="Password">
+            <a href="/Studentsignup">Forgot password?</a>
+            <input type="submit" class="button" value="Login">
+        </form>
+    </div>
+</div>
+</body>
+</html>
