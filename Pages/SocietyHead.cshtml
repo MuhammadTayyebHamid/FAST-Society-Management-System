@@ -25,10 +25,11 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="/SocietyHead">
+                            <a href="/SocietyHead?societyName=@Model.SocietyName">
                                 <span class="nav-item">Home</span>
                             </a>
                         </li>
+
 
                         <li>
                             <a href="/ManageMember">
@@ -134,34 +135,87 @@
 
                     <div>
                         <h1>Budget</h1>
-                        <table class="budgetTable">
+                        <table class="announcementTable">
 
-                            <tr>
-                                <td id="TotalBudgetColumn">
-                                    <p>Total Budget</p>
-                                </td>
-                                <td>
-                                    <p>50,000</p>
-                                </td>
-
-                                <td id="TotalBudgetColumn">
-                                    <p>Remanining Budget</p>
-                                </td>
-                                <td>
-                                    <p>40,000</p>
-                                </td>
-
-                                <td id="TotalBudgetColumn">
-                                    <p>Used Budget</p>
-                                </td>
-                                <td>
-                                    <p>10,000</p>
-                                </td>
-
-                            </tr>
-
+                            <tbody>
+                                @foreach (var budget in Model.budgets)
+                                {
+                                    <tr>
+                                        <td>
+                                            <center> Total Budget </center>
+                                        </td>
+                                        <td>
+                                            <center> Remaining Budget</center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                       
+                                        <td>
+                                            <center> @budget.TotalBudget </center>
+                                        </td>
+                                        <td>
+                                            <center>@Model.remaining_budget</center>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
                         </table>
+                        @if (Model.Event != null && Model.Event.Any())
+                        {
+                            <h2>Events</h2>
+                            <br />
+                            <table class="announcementTable">
 
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <center> Event Name </center>
+                                        </td>
+                                        <td>
+                                            <center> Budget </center>
+                                        </td>
+                                        <td>
+                                            <center> Date </center>
+                                        </td>
+                                        <td>
+                                            <center> Start date </center>
+                                        </td>
+                                        <td>
+                                            <center> End date </center>
+                                        </td>
+                                        <td>
+                                            <center> budget </center>
+                                        </td>
+                                    </tr>
+
+                                    @foreach (var events in Model.Event)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <center> @events.Name </center>
+                                            </td>
+                                            <td>
+                                                <center> @events.Location </center>
+                                            </td>
+                                            <td>
+                                                <center> @events.Date </center>
+                                            </td>
+                                            <td>
+                                                <center> @events.StartTime </center>
+                                            </td>
+                                            <td>
+                                                <center> @events.EndTime </center>
+                                            </td>
+                                            <td>
+                                                <center> @events.Budget </center>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        }
 
                     </div>
 

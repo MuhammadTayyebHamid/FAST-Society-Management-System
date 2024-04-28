@@ -99,9 +99,11 @@
                     <div class="Budget form">
                         <header>Assign Budget</header>
                         <form method="post">
-                            <input type="text" placeholder="Enter Societ Name">
-                            <input type="number" placeholder="Enter Amount">
-                            <input type="submit" class="button" value="Assign">
+                            <label>Society Name</label>
+                            <input type="text" id="SocietyName" name="budget.SocietyName" asp-for="budget.SocietyName" placeholder="Enter Society Name" />
+                            <label>Society Budget</label>
+                            <input type="number" id="TotalBudget" name="budget.TotalBudget" asp-for="budget.TotalBudget" placeholder="Enter Amount">
+                            <input id="sub-button" type="submit" value="Submit" />
                         </form>
                     </div>
 

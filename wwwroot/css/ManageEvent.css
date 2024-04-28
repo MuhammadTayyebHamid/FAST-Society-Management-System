@@ -164,7 +164,7 @@ h1 {
 .addEvent-box {
     padding-top: 40px;
     width: 490px;
-    height: 630px;
+    height: 840px;
     background-color: white;
     border-radius: 3px;
     float: left;
@@ -176,7 +176,7 @@ h1 {
 .RemoveEvent-box {
     align-content: center;
     width: 490px;
-    height: 630px;
+    height: 840px;
     margin: auto;
     background-color: white;
     border-radius: 3px;

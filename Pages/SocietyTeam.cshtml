@@ -26,26 +26,12 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="/Index">
+                        <a asp-page="/SocietyTeam" asp-route-societyName="@TempData["SocietyName"]" asp-route-name="@TempData["Name"]">
                             <span class="nav-item">Home</span>
                         </a>
                     </li>
 
-                    <li>
-                        <a href="/SocietyHead">
-                            <span class="nav-item">Society Head</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Admin">
-                            <span class="nav-item">Admin</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Student">
-                            <span class="nav-item">Student</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="/AboutUS">
                             <span class="nav-item">About US</span>

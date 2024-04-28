@@ -59,56 +59,104 @@
                     </button>
                 </div>
                 <div class="main-body">
-                    <h2>Announcements</h2>
-                    <br />
-                    <table class="announcementTable">
+                    
+                   
+                    @if (Model.Announcements != null && Model.Announcements.Any())
+                    {
+                        <h2>Announcements</h2>
+                        <br />
+                        <table class="announcementTable">
 
-                        <tr>
-                            <td id="societyColumn">
-                                <h3>Society 1</h3>
-                            </td>
-                            <td>
-                                <p>Announcemetssssssssssssssssssssss.</p>
-                            </td>
+                            <tbody>
 
-                        </tr>
+                                <tr>
+                                    <td>
+                                        <center> Society Name </center>
+                                    </td>
+                                    <td>
+                                        <center> Announcement </center>
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td>
-                                <h3>Society 2</h3>
-                            </td>
-                            <td>
-                                <p>Announcemetssssssssssssssssssssss.</p>
-                            </td>
+                                @foreach (var announcement in Model.Announcements)
+                                {
+                                    <tr>
+                                        <td>
+                                            <center> @announcement.societyName </center>
+                                        </td>
+                                        <td>
+                                            <center> @announcement.Announcement </center>
+                                        </td>
+                                    </tr>
+                                }
 
-                        </tr>
-                    </table>
+                            </tbody>
+                        </table>
+                    }
 
-                    <br/>
-                    <h2>Events</h2>
-                    <br />
-                    <table class="eventTable">
+                   
+                    @if (Model.Event != null && Model.Event.Any())
+                    {
+                        <h2>Events</h2>
+                        <br />
+                        <table class="announcementTable">
 
-                        <tr>
-                            <td id="eventColumn">
-                                <h3>Society 1</h3>
-                            </td>
-                            <td>
-                                <p>Eventsssssssssssssssssssssss.</p>
-                            </td>
+                            <tbody>
 
-                        </tr>
+                                <tr>
+                                    <td>
+                                        <center> Society Name </center>
+                                    </td>
+                                    <td>
+                                        <center> Event Name </center>
+                                    </td>
+                                    <td>
+                                        <center> Budget </center>
+                                    </td>
+                                    <td>
+                                        <center> Date </center>
+                                    </td>
+                                    <td>
+                                        <center> Start date </center>
+                                    </td>
+                                    <td>
+                                        <center> End date </center>
+                                    </td>
+                                    <td>
+                                        <center> Ticket price </center>
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td>
-                                <h3>Society 2</h3>
-                            </td>
-                            <td>
-                                <p>Eventsssssssssssssssssssssss.</p>
-                            </td>
+                                @foreach (var events in Model.Event)
+                                {
+                                    <tr>
+                                        <td>
+                                            <center> @events.SocietyName </center>
+                                        </td>
+                                        <td>
+                                            <center> @events.Name </center>
+                                        </td>
+                                        <td>
+                                            <center> @events.Location </center>
+                                        </td>
+                                        <td>
+                                            <center> @events.Date </center>
+                                        </td>
+                                        <td>
+                                            <center> @events.StartTime </center>
+                                        </td>
+                                        <td>
+                                            <center> @events.EndTime </center>
+                                        </td>
+                                        <td>
+                                            <center> @events.ticket_price </center>
+                                        </td>
+                                    </tr>
+                                }
 
-                        </tr>
-                    </table>
+                            </tbody>
+                        </table>
+                    }
 
 
 
