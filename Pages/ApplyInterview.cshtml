@@ -25,20 +25,20 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="/Student">
+                            <a href="/Student?studentname=@Model.Student_name">
                                 <span class="nav-item">Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/ApplyInterview">
+                            <a href="/ApplyInterview?studentname=@Model.Student_name">
                                 <span class="nav-item">Apply for Interview</span>
                             </a>
                         </li>
-
                         <li>
-                            <a href="/RegisterEvent">
+                            <a href="/RegisterEvent?studentname=@Model.Student_name">
                                 <span class="nav-item">Register for Event</span>
                             </a>
+                        </li>
 
                         <li>
                             <a href="#" class="logout">
@@ -61,17 +61,16 @@
                 <div class="main-body">
                     <div class="applyInterview-box">
                         <h1>Apply for Interview</h1>
-                        <form>
-                            <label>Society</label>
-                            <input type="text" placeholder="Enter Society Name" />
+                        <form method="post">
                             <label>Name</label>
-                            <input type="text" placeholder="Enter Name" />
+                            <input type="text" id="name" name="interview.Name" asp-for="interview.Name" placeholder="Enter Name" />
+                            <label>Society</label>
+                            <input type="text" id="name" name="interview.SocietyName" asp-for="interview.SocietyName" placeholder="Enter Society" />
                             <label>Email</label>
-                            <input type="email" placeholder="Enter Email" />
+                            <input type="email" id="email" name="interview.Email" asp-for="interview.Email" placeholder="Enter Email" />
                             <label>Roll No</label>
-                            <input type="text" placeholder="Enter Roll No i.e. 24I-0823" />
-             
-                            <input id="sub-button" type="button" value="Apply" />
+                            <input type="text" id="rollNo" name="interview.RollNo" asp-for="interview.RollNo" placeholder="Enter Roll No i.e. 24I-0823" />
+                            <input id="sub-button" type="submit" value="Submit" />
                         </form>
                     </div>
 

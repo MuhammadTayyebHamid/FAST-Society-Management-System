@@ -19,8 +19,12 @@ public class StudentModel : PageModel
 
     public Models.Announcements Announcement { get; set; }
     public List<Models.Announcements> Announcements = new List<Models.Announcements>();
-    public void OnGet()
+
+    public String Student_name { get; set; }
+    public void OnGet(string student_name)
     {
+        Student_name = student_name;
+        TempData["SocietyName"] = student_name;
         LoadAnnouncements();
         LoadEvents();
     }

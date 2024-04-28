@@ -19,6 +19,13 @@ namespace SE_Project.Pages
         public Members member { get; set; }
         public string RemoveMember { get; set; }
 
+        public string SocietyName { get; set; }
+        public void OnGet(string societyName)
+        {
+            SocietyName = societyName;
+            TempData["SocietyName"] = societyName;
+
+        }
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)

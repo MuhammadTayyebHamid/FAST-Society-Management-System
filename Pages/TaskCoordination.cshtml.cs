@@ -19,7 +19,13 @@ namespace SE_Project.Pages
 
         [BindProperty]
         public Tasks Task { get; set; }
+        public string SocietyName { get; set; }
+        public void OnGet(string societyName)
+        {
+            SocietyName = societyName;
+            TempData["SocietyName"] = societyName;
 
+        }
         public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)

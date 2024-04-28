@@ -26,33 +26,34 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="/SocietyHead">
+                            <a href="/SocietyHead?societyName=@Model.SocietyName">
                                 <span class="nav-item">Home</span>
                             </a>
                         </li>
 
+
                         <li>
-                            <a href="/ManageMember">
+                            <a href="/ManageMember?societyName=@Model.SocietyName">
                                 <span class="nav-item">Manage Member</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ManageEvent">
+                            <a href="ManageEvent?societyName=@Model.SocietyName">
                                 <span class="nav-item">Manage Event</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/TaskCoordination">
+                            <a href="/TaskCoordination?societyName=@Model.SocietyName">
                                 <span class="nav-item">Task Coordination</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/CreateMeeting">
+                            <a href="/CreateMeeting?societyName=@Model.SocietyName">
                                 <span class="nav-item">Create Meeting</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/ManageInterview">
+                            <a href="/ManageInterview?societyName=@Model.SocietyName">
                                 <span class="nav-item">Manage Interview</span>
                             </a>
                         </li>
@@ -77,75 +78,44 @@
                 </div>
                 <div class="main-body">
                     <h1>Manage Interview</h1>
-                    <table>
-                        <tr>
-                            <td>Name</td>
-                            <td>Email</td>
-                            <td>Roll NO</td>
-      
-                            <td>Response</td>
+                    @if (Model.Interviews != null && Model.Interviews.Any())
+                    {
+                        <h2>Interviews</h2>
+                        <br />
+                        <table class="announcementTable">
 
-                        </tr>
+                            <tbody>
 
-                        <tr>
-                            <td>Huzaifa</td>
-                            <td>i210586@nu.edu.pk</td>
-                            <td>21I-0586</td>
-             
-                            <td>
-                                <select id="response" onchange="handleResponseChange(this)">
-                                    <option value="">Select</option>
-                                    <option value="Accept">Accept</option>
-                                    <option value="Reject">Reject</option>
-                                </select>
-                                <label id="dateLabel" style="display: none;">Date</label>
-                                <input type="date" id="dateInput" style="display: none;" />
-                                <label id="timeLabel" style="display: none;">Time</label>
-                                <input type="time" id="timeInput" style="display: none;" />
-                                <input type="button" id="doneButton" value="Done" style="display: none;" />
-                            </td>
-                        </tr>
+                                <tr>
+                                    <td>
+                                        <center> Name </center>
+                                    </td>
+                                    <td>
+                                        <center> Email </center>
+                                    </td>
+                                    <td>
+                                        <center> roll number </center>
+                                    </td>
+                                </tr>
 
-                        <tr>
-                            <td>Tayyeb </td>
-                            <td>i210378@nu.edu.pk</td>
-                            <td>21I-0378</td>
-      
-                            <td>
-                                <select id="response" onchange="handleResponseChange(this)">
-                                    <option value="">Select</option>
-                                    <option value="Accept">Accept</option>
-                                    <option value="Reject">Reject</option>
-                                </select>
-                                <label id="dateLabel" style="display: none;">Date</label>
-                                <input type="date" id="dateInput" style="display: none;" />
-                                <label id="timeLabel" style="display: none;">Time</label>
-                                <input type="time" id="timeInput" style="display: none;" />
-                                <input type="button" id="doneButton" value="Done" style="display: none;" />
-                            </td>
+                                @foreach (var interview in Model.Interviews)
+                                {
+                                    <tr>
+                                        <td>
+                                            <center> @interview.Name </center>
+                                        </td>
+                                        <td>
+                                            <center> @interview.Email </center>
+                                        </td>
+                                        <td>
+                                            <center> @interview.RollNo </center>
+                                        </td>
+                                    </tr>
+                                }
 
-                        </tr>
-                        <tr>
-                            <td>M Ibrahim</td>
-                            <td>i210797@nu.edu.pk</td>
-                            <td>21I-0797</td>
-      
-                            <td>
-                                <select id="response" onchange="handleResponseChange(this)">
-                                    <option value="">Select</option>
-                                    <option value="Accept">Accept</option>
-                                    <option value="Reject">Reject</option>
-                                </select>
-                                <label id="dateLabel" style="display: none;">Date</label>
-                                <input type="date" id="dateInput" style="display: none;" />
-                                <label id="timeLabel" style="display: none;">Time</label>
-                                <input type="time" id="timeInput" style="display: none;" />
-                                <input type="button" id="doneButton" value="Done" style="display: none;" />
-                            </td>
-
-                        </tr>
-
-                    </table>
+                            </tbody>
+                        </table>
+                    }
 
 
 
